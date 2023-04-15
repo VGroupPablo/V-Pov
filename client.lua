@@ -4,6 +4,8 @@ Citizen.CreateThread(function()
 		local camera = GetFollowPedCamViewMode()
 		local ped = PlayerPedId()
 		local player = PlayerId()
+		local shake_counter1 = 0
+		local shake_counter2 = 0
 		local cam = false
 		DisableControlAction(2, 0, true)
 		if camera ~= 4 then
