@@ -21,5 +21,24 @@ Citizen.CreateThread(function()
 
 			end
 		end
+	
+		if IsPlayerFreeAiming(player) and IsPedStill(ped) and not IsPedAimingFromCover(ped) then
+			Citizen.Wait(100)
+			shake_counter1 = shake_counter1 + 1
+			shake_counter2 = 0
+			if (shake_counter1 == 5) then 
+				ShakeGameplayCam('HAND_SHAKE', Config.shakestill) 
+			end
+		elseif IsPlayerFreeAiming(player) and not IsPedStill(ped) then
+			Citizen.Wait(10)
+			shake_counter2 = shake_counter2 + 1
+			shake_counter1 = 0
+			if (shake_counter2 == 5) then 
+				ShakeGameplayCam('HAND_SHAKE', Config.shakemovement) 
+			end
+			shake_counter1 = 0
+			shake_counter2 = 0
+			StopGameplayCamShaking(true)
+		end
 	end
 end)
