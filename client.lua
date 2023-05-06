@@ -12,12 +12,12 @@ CreateThread(function()
 			if camera ~= 4 then
 				SetFollowPedCamViewMode(4)
 				cam = true 
-			else
+			end
 		else
 			if camera ~= 2 then
 				SetFollowPedCamViewMode(2)
 				cam = true 
-			else		
+			end		
 				
 		end
 		if Config.Disableautosprint then
