@@ -8,10 +8,16 @@ CreateThread(function()
 		local shake_counter2 = 0
 		local cam = false
 		DisableControlAction(2, 0, true)
-		if camera ~= 4 then
-			SetFollowPedCamViewMode(4)
-			cam = true 
+		if Config.Person == "First" then 
+			if camera ~= 4 then
+				SetFollowPedCamViewMode(4)
+				cam = true 
+			else
 		else
+			if camera ~= 2 then
+				SetFollowPedCamViewMode(2)
+				cam = true 
+			else		
 				
 		end
 		if Config.Disableautosprint then
